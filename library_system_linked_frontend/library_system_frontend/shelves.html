@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shelves | Library Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <a class="brand" href="index.html">
+          <span class="brand-icon">▤</span>
+          <span>LibraryDesk</span>
+        </a>
+
+        <div class="nav-label">Main menu</div>
+        <nav class="nav">
+          <a href="index.html">
+            <span class="nav-icon">▦</span>
+            <span>Dashboard</span>
+          </a>
+          <a href="students.html">
+            <span class="nav-icon">♙</span>
+            <span>Students</span>
+          </a>
+          <a href="books.html">
+            <span class="nav-icon">▤</span>
+            <span>Books</span>
+          </a>
+          <a href="authors.html">
+            <span class="nav-icon">✎</span>
+            <span>Authors</span>
+          </a>
+          <a class="active" href="shelves.html">
+            <span class="nav-icon">▥</span>
+            <span>Shelves</span>
+          </a>
+          <a href="student-books.html">
+            <span class="nav-icon">⇄</span>
+            <span>Student–Book</span>
+          </a>
+          <a href="book-authors.html">
+            <span class="nav-icon">⌘</span>
+            <span>Book–Author</span>
+          </a>
+        </nav>
+
+        <div class="side-note">
+          Library Management System<br>
+          HTML &amp; CSS frontend
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main">
+        <!-- Topbar -->
+        <header class="topbar">
+          <div class="crumb">
+            <a href="index.html">Library Management</a>
+            <span> / </span>
+            <strong>Shelves</strong>
+          </div>
+          <div class="top-right">
+            <input class="top-search" type="search" placeholder="Search...">
+            <div class="avatar">RA</div>
+          </div>
+        </header>
+
+        <!-- Content Section -->
+        <section class="content">
+          <!-- Page Header -->
+          <div class="page-head">
+            <div>
+              <div class="eyebrow">Library administration</div>
+              <h1>Shelves</h1>
+              <p class="subtitle">Organize physical library locations and book categories.</p>
+            </div>
+            <button class="btn" type="button" data-open-modal="createShelfModal">＋ Add shelf</button>
+          </div>
+
+          <!-- Shelves Table Panel -->
+          <section class="panel">
+            <div class="toolbar">
+              <input class="search" type="search" placeholder="Search shelves...">
+              <a class="btn btn-light" href="index.html">← Dashboard</a>
+            </div>
+
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Shelf</th>
+                    <th>Location</th>
+                    <th>Category</th>
+                    <th>Books stored</th>
+                    <th>Capacity</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Shelf A-01</strong></td>
+                    <td>Ground floor</td>
+                    <td>Programming</td>
+                    <td><a class="link" href="books.html">28 books →</a></td>
+                    <td>40</td>
+                    <td>
+                      <div class="table-actions">
+                        <button
+                          class="btn btn-sm btn-edit"
+                          type="button"
+                          data-open-modal="editShelfModal"
+                          data-name="Shelf A-01"
+                          data-location="Ground floor"
+                          data-category="Programming"
+                          data-capacity="40"
+                        >
+                          ✎ Edit
+                        </button>
+                        <button class="btn btn-sm btn-delete" type="button">🗑 Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Shelf B-03</strong></td>
+                    <td>First floor</td>
+                    <td>Web development</td>
+                    <td><a class="link" href="books.html">19 books →</a></td>
+                    <td>35</td>
+                    <td>
+                      <div class="table-actions">
+                        <button
+                          class="btn btn-sm btn-edit"
+                          type="button"
+                          data-open-modal="editShelfModal"
+                          data-name="Shelf B-03"
+                          data-location="First floor"
+                          data-category="Web development"
+                          data-capacity="35"
+                        >
+                          ✎ Edit
+                        </button>
+                        <button class="btn btn-sm btn-delete" type="button">🗑 Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Shelf C-02</strong></td>
+                    <td>Ground floor</td>
+                    <td>Databases</td>
+                    <td><a class="link" href="books.html">31 books →</a></td>
+                    <td>40</td>
+                    <td>
+                      <div class="table-actions">
+                        <button
+                          class="btn btn-sm btn-edit"
+                          type="button"
+                          data-open-modal="editShelfModal"
+                          data-name="Shelf C-02"
+                          data-location="Ground floor"
+                          data-category="Databases"
+                          data-capacity="40"
+                        >
+                          ✎ Edit
+                        </button>
+                        <button class="btn btn-sm btn-delete" type="button">🗑 Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="hint">
+              Sample records for frontend preview. Live records will come from your database when connected.
+            </div>
+          </section>
+
+          <!-- Footer -->
+          <footer class="footer">
+            © 2026 LibraryDesk · Library Management System
+          </footer>
+        </section>
+      </main>
+    </div>
+
+    <!-- ======================================================================
+         CREATE SHELF MODAL
+         ====================================================================== -->
+    <div class="modal-backdrop" id="createShelfModal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-header-text">
+            <h3>Add new shelf</h3>
+            <p>Define a storage section and maximum capacity for organizing books.</p>
+          </div>
+          <button class="modal-close" type="button" data-close-modal aria-label="Close modal">✕</button>
+        </div>
+
+        <div class="modal-body">
+          <form id="createShelfForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="create-shelf-name">Shelf name</label>
+                <input id="create-shelf-name" type="text" placeholder="e.g. Shelf D-01" required>
+              </div>
+
+              <div class="field">
+                <label for="create-shelf-location">Location / Floor</label>
+                <input id="create-shelf-location" type="text" placeholder="e.g. Ground floor" required>
+              </div>
+
+              <div class="field">
+                <label for="create-shelf-category">Category</label>
+                <input id="create-shelf-category" type="text" placeholder="e.g. Engineering">
+              </div>
+
+              <div class="field">
+                <label for="create-shelf-capacity">Capacity (books)</label>
+                <input id="create-shelf-capacity" type="number" placeholder="e.g. 50">
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-light" type="button" data-close-modal>Cancel</button>
+          <button class="btn btn-save" type="button" data-action="Shelf created">Save shelf</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         EDIT / UPDATE SHELF MODAL
+         ====================================================================== -->
+    <div class="modal-backdrop" id="editShelfModal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-header-text">
+            <h3>Edit shelf details</h3>
+            <p>Update physical location, category label, or maximum capacity.</p>
+          </div>
+          <button class="modal-close" type="button" data-close-modal aria-label="Close modal">✕</button>
+        </div>
+
+        <div class="modal-body">
+          <form id="editShelfForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="edit-name">Shelf name</label>
+                <input id="edit-name" type="text" placeholder="Shelf name" required>
+              </div>
+
+              <div class="field">
+                <label for="edit-location">Location / Floor</label>
+                <input id="edit-location" type="text" placeholder="Location" required>
+              </div>
+
+              <div class="field">
+                <label for="edit-category">Category</label>
+                <input id="edit-category" type="text" placeholder="Category">
+              </div>
+
+              <div class="field">
+                <label for="edit-capacity">Capacity</label>
+                <input id="edit-capacity" type="number" placeholder="Capacity">
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-light" type="button" data-close-modal>Cancel</button>
+          <button class="btn btn-save" type="button" data-action="Shelf updated">Update shelf</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript Application Script -->
+    <script src="js/app.js"></script>
+  </body>
+</html>

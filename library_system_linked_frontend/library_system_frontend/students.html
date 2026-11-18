@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students | Library Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <a class="brand" href="index.html">
+          <span class="brand-icon">▤</span>
+          <span>LibraryDesk</span>
+        </a>
+
+        <div class="nav-label">Main menu</div>
+        <nav class="nav">
+          <a href="index.html">
+            <span class="nav-icon">▦</span>
+            <span>Dashboard</span>
+          </a>
+          <a class="active" href="students.html">
+            <span class="nav-icon">♙</span>
+            <span>Students</span>
+          </a>
+          <a href="books.html">
+            <span class="nav-icon">▤</span>
+            <span>Books</span>
+          </a>
+          <a href="authors.html">
+            <span class="nav-icon">✎</span>
+            <span>Authors</span>
+          </a>
+          <a href="shelves.html">
+            <span class="nav-icon">▥</span>
+            <span>Shelves</span>
+          </a>
+          <a href="student-books.html">
+            <span class="nav-icon">⇄</span>
+            <span>Student–Book</span>
+          </a>
+          <a href="book-authors.html">
+            <span class="nav-icon">⌘</span>
+            <span>Book–Author</span>
+          </a>
+        </nav>
+
+        <div class="side-note">
+          Library Management System<br>
+          HTML &amp; CSS frontend
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main">
+        <!-- Topbar -->
+        <header class="topbar">
+          <div class="crumb">
+            <a href="index.html">Library Management</a>
+            <span> / </span>
+            <strong>Students</strong>
+          </div>
+          <div class="top-right">
+            <input class="top-search" type="search" placeholder="Search...">
+            <div class="avatar">RA</div>
+          </div>
+        </header>
+
+        <!-- Content Section -->
+        <section class="content">
+          <!-- Page Header -->
+          <div class="page-head">
+            <div>
+              <div class="eyebrow">Library administration</div>
+              <h1>Students</h1>
+              <p class="subtitle">Manage student profiles and their library records.</p>
+            </div>
+            <button class="btn" type="button" data-open-modal="createStudentModal">＋ Add student</button>
+          </div>
+
+          <!-- Students Table Panel -->
+          <section class="panel">
+            <div class="toolbar">
+              <input class="search" type="search" placeholder="Search students...">
+              <a class="btn btn-light" href="index.html">← Dashboard</a>
+            </div>
+
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Student</th>
+                    <th>Email</th>
+                    <th>Department</th>
+                    <th>Phone</th>
+                    <th>Joined</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="person">
+                        <span class="initials">AO</span>
+                        <strong>Amelia Ojong</strong>
+                      </div>
+                    </td>
+                    <td>amelia@example.com</td>
+                    <td>Computer Science</td>
+                    <td>670 000 001</td>
+                    <td>12 Nov 2026</td>
+                    <td><span class="status">Active</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <button
+                          class="btn btn-sm btn-edit"
+                          type="button"
+                          data-open-modal="editStudentModal"
+                          data-first-name="Amelia"
+                          data-last-name="Ojong"
+                          data-email="amelia@example.com"
+                          data-phone="670 000 001"
+                          data-dept="Computer Science"
+                          data-id="STU-001"
+                          data-status="Active"
+                        >
+                          ✎ Edit
+                        </button>
+                        <button class="btn btn-sm btn-delete" type="button">🗑 Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="person">
+                        <span class="initials">MK</span>
+                        <strong>Michael K.</strong>
+                      </div>
+                    </td>
+                    <td>michael@example.com</td>
+                    <td>Engineering</td>
+                    <td>670 000 002</td>
+                    <td>08 Nov 2026</td>
+                    <td><span class="status">Active</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <button
+                          class="btn btn-sm btn-edit"
+                          type="button"
+                          data-open-modal="editStudentModal"
+                          data-first-name="Michael"
+                          data-last-name="K."
+                          data-email="michael@example.com"
+                          data-phone="670 000 002"
+                          data-dept="Engineering"
+                          data-id="STU-002"
+                          data-status="Active"
+                        >
+                          ✎ Edit
+                        </button>
+                        <button class="btn btn-sm btn-delete" type="button">🗑 Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="person">
+                        <span class="initials">SN</span>
+                        <strong>Sandra N.</strong>
+                      </div>
+                    </td>
+                    <td>sandra@example.com</td>
+                    <td>Business</td>
+                    <td>670 000 003</td>
+                    <td>02 Nov 2026</td>
+                    <td><span class="status inactive">Inactive</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <button
+                          class="btn btn-sm btn-edit"
+                          type="button"
+                          data-open-modal="editStudentModal"
+                          data-first-name="Sandra"
+                          data-last-name="N."
+                          data-email="sandra@example.com"
+                          data-phone="670 000 003"
+                          data-dept="Business"
+                          data-id="STU-003"
+                          data-status="Inactive"
+                        >
+                          ✎ Edit
+                        </button>
+                        <button class="btn btn-sm btn-delete" type="button">🗑 Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="hint">
+              Sample records for frontend preview. Live records will come from your database when connected.
+            </div>
+          </section>
+
+          <!-- Footer -->
+          <footer class="footer">
+            © 2026 LibraryDesk · Library Management System
+          </footer>
+        </section>
+      </main>
+    </div>
+
+    <!-- ======================================================================
+         CREATE STUDENT MODAL
+         ====================================================================== -->
+    <div class="modal-backdrop" id="createStudentModal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-header-text">
+            <h3>Add new student</h3>
+            <p>Enter the details below to register a student profile.</p>
+          </div>
+          <button class="modal-close" type="button" data-close-modal aria-label="Close modal">✕</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="notice">
+            Fill out the student information below and click Save.
+          </div>
+
+          <form id="createStudentForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="create-student-first-name">First name</label>
+                <input id="create-student-first-name" type="text" placeholder="Enter first name" required>
+              </div>
+
+              <div class="field">
+                <label for="create-student-last-name">Last name</label>
+                <input id="create-student-last-name" type="text" placeholder="Enter last name" required>
+              </div>
+
+              <div class="field">
+                <label for="create-student-email">Email address</label>
+                <input id="create-student-email" type="email" placeholder="Enter email address" required>
+              </div>
+
+              <div class="field">
+                <label for="create-student-phone">Phone number</label>
+                <input id="create-student-phone" type="tel" placeholder="Enter phone number">
+              </div>
+
+              <div class="field">
+                <label for="create-student-dept">Department</label>
+                <input id="create-student-dept" type="text" placeholder="e.g. Computer Science">
+              </div>
+
+              <div class="field">
+                <label for="create-student-id">Student ID</label>
+                <input id="create-student-id" type="text" placeholder="e.g. STU-004">
+              </div>
+
+              <div class="field full">
+                <label for="create-student-status">Account status</label>
+                <select id="create-student-status">
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-light" type="button" data-close-modal>Cancel</button>
+          <button class="btn btn-save" type="button" data-action="Student created">Save student</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         EDIT / UPDATE STUDENT MODAL
+         ====================================================================== -->
+    <div class="modal-backdrop" id="editStudentModal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-header-text">
+            <h3>Edit student profile</h3>
+            <p>Update student records and library permissions.</p>
+          </div>
+          <button class="modal-close" type="button" data-close-modal aria-label="Close modal">✕</button>
+        </div>
+
+        <div class="modal-body">
+          <form id="editStudentForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="edit-first-name">First name</label>
+                <input id="edit-first-name" type="text" placeholder="First name" required>
+              </div>
+
+              <div class="field">
+                <label for="edit-last-name">Last name</label>
+                <input id="edit-last-name" type="text" placeholder="Last name" required>
+              </div>
+
+              <div class="field">
+                <label for="edit-email">Email address</label>
+                <input id="edit-email" type="email" placeholder="Email address" required>
+              </div>
+
+              <div class="field">
+                <label for="edit-phone">Phone number</label>
+                <input id="edit-phone" type="tel" placeholder="Phone number">
+              </div>
+
+              <div class="field">
+                <label for="edit-dept">Department</label>
+                <input id="edit-dept" type="text" placeholder="Department">
+              </div>
+
+              <div class="field">
+                <label for="edit-id">Student ID</label>
+                <input id="edit-id" type="text" placeholder="Student ID">
+              </div>
+
+              <div class="field full">
+                <label for="edit-status">Account status</label>
+                <select id="edit-status">
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-light" type="button" data-close-modal>Cancel</button>
+          <button class="btn btn-save" type="button" data-action="Student updated">Update student</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript Application Script -->
+    <script src="js/app.js"></script>
+  </body>
+</html>

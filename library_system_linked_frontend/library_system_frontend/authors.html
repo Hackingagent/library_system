@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authors | Library Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <a class="brand" href="index.html">
+          <span class="brand-icon">▤</span>
+          <span>LibraryDesk</span>
+        </a>
+
+        <div class="nav-label">Main menu</div>
+        <nav class="nav">
+          <a href="index.html">
+            <span class="nav-icon">▦</span>
+            <span>Dashboard</span>
+          </a>
+          <a href="students.html">
+            <span class="nav-icon">♙</span>
+            <span>Students</span>
+          </a>
+          <a href="books.html">
+            <span class="nav-icon">▤</span>
+            <span>Books</span>
+          </a>
+          <a class="active" href="authors.html">
+            <span class="nav-icon">✎</span>
+            <span>Authors</span>
+          </a>
+          <a href="shelves.html">
+            <span class="nav-icon">▥</span>
+            <span>Shelves</span>
+          </a>
+          <a href="student-books.html">
+            <span class="nav-icon">⇄</span>
+            <span>Student–Book</span>
+          </a>
+          <a href="book-authors.html">
+            <span class="nav-icon">⌘</span>
+            <span>Book–Author</span>
+          </a>
+        </nav>
+
+        <div class="side-note">
+          Library Management System<br>
+          HTML &amp; CSS frontend
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main">
+        <!-- Topbar -->
+        <header class="topbar">
+          <div class="crumb">
+            <a href="index.html">Library Management</a>
+            <span> / </span>
+            <strong>Authors</strong>
+          </div>
+          <div class="top-right">
+            <input class="top-search" type="search" placeholder="Search...">
+            <div class="avatar">RA</div>
+          </div>
+        </header>
+
+        <!-- Content Section -->
+        <section class="content">
+          <!-- Page Header -->
+          <div class="page-head">
+            <div>
+              <div class="eyebrow">Library administration</div>
+              <h1>Authors</h1>
+              <p class="subtitle">Manage author profiles and connect writers to books.</p>
+            </div>
+            <button class="btn" type="button" data-open-modal="createAuthorModal">＋ Add author</button>
+          </div>
+
+          <!-- Authors Table Panel -->
+          <section class="panel">
+            <div class="toolbar">
+              <input class="search" type="search" placeholder="Search authors...">
+              <a class="btn btn-light" href="index.html">← Dashboard</a>
+            </div>
+
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Author</th>
+                    <th>Email</th>
+                    <th>Country</th>
+                    <th>Books linked</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Robert C. Martin</strong></td>
+                    <td>robert@example.com</td>
+                    <td>United States</td>
+                    <td><a class="link" href="books.html">4 books →</a></td>
+                    <td><span class="status">Active</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <button
+                          class="btn btn-sm btn-edit"
+                          type="button"
+                          data-open-modal="editAuthorModal"
+                          data-first-name="Robert C."
+                          data-last-name="Martin"
+                          data-email="robert@example.com"
+                          data-country="United States"
+                          data-status="Active"
+                          data-bio="Known as Uncle Bob. Software engineer and bestselling author of Clean Code and Clean Architecture."
+                        >
+                          ✎ Edit
+                        </button>
+                        <button class="btn btn-sm btn-delete" type="button">🗑 Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>David Sklar</strong></td>
+                    <td>david@example.com</td>
+                    <td>United States</td>
+                    <td><a class="link" href="books.html">2 books →</a></td>
+                    <td><span class="status">Active</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <button
+                          class="btn btn-sm btn-edit"
+                          type="button"
+                          data-open-modal="editAuthorModal"
+                          data-first-name="David"
+                          data-last-name="Sklar"
+                          data-email="david@example.com"
+                          data-country="United States"
+                          data-status="Active"
+                          data-bio="Author of Learning PHP and PHP Cookbook with extensive backend engineering background."
+                        >
+                          ✎ Edit
+                        </button>
+                        <button class="btn btn-sm btn-delete" type="button">🗑 Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Jon Duckett</strong></td>
+                    <td>jon@example.com</td>
+                    <td>United Kingdom</td>
+                    <td><a class="link" href="books.html">3 books →</a></td>
+                    <td><span class="status">Active</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <button
+                          class="btn btn-sm btn-edit"
+                          type="button"
+                          data-open-modal="editAuthorModal"
+                          data-first-name="Jon"
+                          data-last-name="Duckett"
+                          data-email="jon@example.com"
+                          data-country="United Kingdom"
+                          data-status="Active"
+                          data-bio="Designer and bestselling author creating highly visual, world-renowned web development guides."
+                        >
+                          ✎ Edit
+                        </button>
+                        <button class="btn btn-sm btn-delete" type="button">🗑 Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="hint">
+              Sample records for frontend preview. Live records will come from your database when connected.
+            </div>
+          </section>
+
+          <!-- Footer -->
+          <footer class="footer">
+            © 2026 LibraryDesk · Library Management System
+          </footer>
+        </section>
+      </main>
+    </div>
+
+    <!-- ======================================================================
+         CREATE AUTHOR MODAL
+         ====================================================================== -->
+    <div class="modal-backdrop" id="createAuthorModal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-header-text">
+            <h3>Add new author</h3>
+            <p>Register a writer profile to associate with books in your collection.</p>
+          </div>
+          <button class="modal-close" type="button" data-close-modal aria-label="Close modal">✕</button>
+        </div>
+
+        <div class="modal-body">
+          <form id="createAuthorForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="create-author-first-name">First name</label>
+                <input id="create-author-first-name" type="text" placeholder="Enter first name" required>
+              </div>
+
+              <div class="field">
+                <label for="create-author-last-name">Last name</label>
+                <input id="create-author-last-name" type="text" placeholder="Enter last name" required>
+              </div>
+
+              <div class="field">
+                <label for="create-author-email">Email address</label>
+                <input id="create-author-email" type="email" placeholder="Enter email address">
+              </div>
+
+              <div class="field">
+                <label for="create-author-country">Country</label>
+                <input id="create-author-country" type="text" placeholder="e.g. United States">
+              </div>
+
+              <div class="field full">
+                <label for="create-author-status">Status</label>
+                <select id="create-author-status">
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="create-author-bio">Biography</label>
+                <textarea id="create-author-bio" placeholder="Brief author background..."></textarea>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-light" type="button" data-close-modal>Cancel</button>
+          <button class="btn btn-save" type="button" data-action="Author created">Save author</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         EDIT / UPDATE AUTHOR MODAL
+         ====================================================================== -->
+    <div class="modal-backdrop" id="editAuthorModal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-header-text">
+            <h3>Edit author profile</h3>
+            <p>Update personal information, country, and bio details.</p>
+          </div>
+          <button class="modal-close" type="button" data-close-modal aria-label="Close modal">✕</button>
+        </div>
+
+        <div class="modal-body">
+          <form id="editAuthorForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="edit-first-name">First name</label>
+                <input id="edit-first-name" type="text" placeholder="First name" required>
+              </div>
+
+              <div class="field">
+                <label for="edit-last-name">Last name</label>
+                <input id="edit-last-name" type="text" placeholder="Last name" required>
+              </div>
+
+              <div class="field">
+                <label for="edit-email">Email address</label>
+                <input id="edit-email" type="email" placeholder="Email address">
+              </div>
+
+              <div class="field">
+                <label for="edit-country">Country</label>
+                <input id="edit-country" type="text" placeholder="Country">
+              </div>
+
+              <div class="field full">
+                <label for="edit-status">Status</label>
+                <select id="edit-status">
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="edit-bio">Biography</label>
+                <textarea id="edit-bio" placeholder="Author biography..."></textarea>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-light" type="button" data-close-modal>Cancel</button>
+          <button class="btn btn-save" type="button" data-action="Author updated">Update author</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript Application Script -->
+    <script src="js/app.js"></script>
+  </body>
+</html>

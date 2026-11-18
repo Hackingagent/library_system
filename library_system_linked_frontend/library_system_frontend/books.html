@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books | Library Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <a class="brand" href="index.html">
+          <span class="brand-icon">▤</span>
+          <span>LibraryDesk</span>
+        </a>
+
+        <div class="nav-label">Main menu</div>
+        <nav class="nav">
+          <a href="index.html">
+            <span class="nav-icon">▦</span>
+            <span>Dashboard</span>
+          </a>
+          <a href="students.html">
+            <span class="nav-icon">♙</span>
+            <span>Students</span>
+          </a>
+          <a class="active" href="books.html">
+            <span class="nav-icon">▤</span>
+            <span>Books</span>
+          </a>
+          <a href="authors.html">
+            <span class="nav-icon">✎</span>
+            <span>Authors</span>
+          </a>
+          <a href="shelves.html">
+            <span class="nav-icon">▥</span>
+            <span>Shelves</span>
+          </a>
+          <a href="student-books.html">
+            <span class="nav-icon">⇄</span>
+            <span>Student–Book</span>
+          </a>
+          <a href="book-authors.html">
+            <span class="nav-icon">⌘</span>
+            <span>Book–Author</span>
+          </a>
+        </nav>
+
+        <div class="side-note">
+          Library Management System<br>
+          HTML &amp; CSS frontend
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main">
+        <!-- Topbar -->
+        <header class="topbar">
+          <div class="crumb">
+            <a href="index.html">Library Management</a>
+            <span> / </span>
+            <strong>Books</strong>
+          </div>
+          <div class="top-right">
+            <input class="top-search" type="search" placeholder="Search...">
+            <div class="avatar">RA</div>
+          </div>
+        </header>
+
+        <!-- Content Section -->
+        <section class="content">
+          <!-- Page Header -->
+          <div class="page-head">
+            <div>
+              <div class="eyebrow">Library administration</div>
+              <h1>Books</h1>
+              <p class="subtitle">Browse and maintain the titles in your library collection.</p>
+            </div>
+            <button class="btn" type="button" data-open-modal="createBookModal">＋ Add book</button>
+          </div>
+
+          <!-- Books Table Panel -->
+          <section class="panel">
+            <div class="toolbar">
+              <input class="search" type="search" placeholder="Search books...">
+              <a class="btn btn-light" href="index.html">← Dashboard</a>
+            </div>
+
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Book title</th>
+                    <th>ISBN</th>
+                    <th>Publisher</th>
+                    <th>Year</th>
+                    <th>Shelf</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Clean Code</strong></td>
+                    <td>9780132350884</td>
+                    <td>Prentice Hall</td>
+                    <td>2008</td>
+                    <td><a class="link" href="shelves.html">Shelf A-01</a></td>
+                    <td><span class="status">Available</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <button
+                          class="btn btn-sm btn-edit"
+                          type="button"
+                          data-open-modal="editBookModal"
+                          data-title="Clean Code"
+                          data-isbn="9780132350884"
+                          data-publisher="Prentice Hall"
+                          data-year="2008"
+                          data-shelf="Shelf A-01"
+                          data-status="Available"
+                          data-desc="A Handbook of Agile Software Craftsmanship"
+                        >
+                          ✎ Edit
+                        </button>
+                        <button class="btn btn-sm btn-delete" type="button">🗑 Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Learning PHP</strong></td>
+                    <td>9781491933571</td>
+                    <td>O’Reilly</td>
+                    <td>2016</td>
+                    <td><a class="link" href="shelves.html">Shelf B-03</a></td>
+                    <td><span class="status">Available</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <button
+                          class="btn btn-sm btn-edit"
+                          type="button"
+                          data-open-modal="editBookModal"
+                          data-title="Learning PHP"
+                          data-isbn="9781491933571"
+                          data-publisher="O’Reilly"
+                          data-year="2016"
+                          data-shelf="Shelf B-03"
+                          data-status="Available"
+                          data-desc="A Gentle Introduction to the Web's Most Popular Language"
+                        >
+                          ✎ Edit
+                        </button>
+                        <button class="btn btn-sm btn-delete" type="button">🗑 Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Database Systems</strong></td>
+                    <td>9780133970777</td>
+                    <td>Pearson</td>
+                    <td>2014</td>
+                    <td><a class="link" href="shelves.html">Shelf C-02</a></td>
+                    <td><span class="status pending">Linked</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <button
+                          class="btn btn-sm btn-edit"
+                          type="button"
+                          data-open-modal="editBookModal"
+                          data-title="Database Systems"
+                          data-isbn="9780133970777"
+                          data-publisher="Pearson"
+                          data-year="2014"
+                          data-shelf="Shelf C-02"
+                          data-status="Linked"
+                          data-desc="A Practical Approach to Design, Implementation, and Management"
+                        >
+                          ✎ Edit
+                        </button>
+                        <button class="btn btn-sm btn-delete" type="button">🗑 Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="hint">
+              Sample records for frontend preview. Live records will come from your database when connected.
+            </div>
+          </section>
+
+          <!-- Footer -->
+          <footer class="footer">
+            © 2026 LibraryDesk · Library Management System
+          </footer>
+        </section>
+      </main>
+    </div>
+
+    <!-- ======================================================================
+         CREATE BOOK MODAL
+         ====================================================================== -->
+    <div class="modal-backdrop" id="createBookModal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-header-text">
+            <h3>Add new book</h3>
+            <p>Enter the catalog and publication details for this title.</p>
+          </div>
+          <button class="modal-close" type="button" data-close-modal aria-label="Close modal">✕</button>
+        </div>
+
+        <div class="modal-body">
+          <form id="createBookForm">
+            <div class="form-grid">
+              <div class="field full">
+                <label for="create-book-title">Book title</label>
+                <input id="create-book-title" type="text" placeholder="e.g. Clean Code" required>
+              </div>
+
+              <div class="field">
+                <label for="create-book-isbn">ISBN</label>
+                <input id="create-book-isbn" type="text" placeholder="e.g. 9780132350884" required>
+              </div>
+
+              <div class="field">
+                <label for="create-book-publisher">Publisher</label>
+                <input id="create-book-publisher" type="text" placeholder="e.g. Prentice Hall">
+              </div>
+
+              <div class="field">
+                <label for="create-book-year">Publication year</label>
+                <input id="create-book-year" type="number" placeholder="e.g. 2024">
+              </div>
+
+              <div class="field">
+                <label for="create-book-shelf">Assigned shelf</label>
+                <select id="create-book-shelf">
+                  <option value="Shelf A-01">Shelf A-01 (Ground floor - Programming)</option>
+                  <option value="Shelf B-03">Shelf B-03 (First floor - Web development)</option>
+                  <option value="Shelf C-02">Shelf C-02 (Ground floor - Databases)</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="create-book-status">Status</label>
+                <select id="create-book-status">
+                  <option value="Available">Available</option>
+                  <option value="Linked">Linked</option>
+                  <option value="Borrowed">Borrowed</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="create-book-desc">Book description</label>
+                <textarea id="create-book-desc" placeholder="Brief summary of the book..."></textarea>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-light" type="button" data-close-modal>Cancel</button>
+          <button class="btn btn-save" type="button" data-action="Book created">Save book</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         EDIT / UPDATE BOOK MODAL
+         ====================================================================== -->
+    <div class="modal-backdrop" id="editBookModal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-header-text">
+            <h3>Edit book details</h3>
+            <p>Update title, ISBN, publisher, and shelf assignment.</p>
+          </div>
+          <button class="modal-close" type="button" data-close-modal aria-label="Close modal">✕</button>
+        </div>
+
+        <div class="modal-body">
+          <form id="editBookForm">
+            <div class="form-grid">
+              <div class="field full">
+                <label for="edit-title">Book title</label>
+                <input id="edit-title" type="text" placeholder="Book title" required>
+              </div>
+
+              <div class="field">
+                <label for="edit-isbn">ISBN</label>
+                <input id="edit-isbn" type="text" placeholder="ISBN" required>
+              </div>
+
+              <div class="field">
+                <label for="edit-publisher">Publisher</label>
+                <input id="edit-publisher" type="text" placeholder="Publisher">
+              </div>
+
+              <div class="field">
+                <label for="edit-year">Publication year</label>
+                <input id="edit-year" type="number" placeholder="Publication year">
+              </div>
+
+              <div class="field">
+                <label for="edit-shelf">Assigned shelf</label>
+                <select id="edit-shelf">
+                  <option value="Shelf A-01">Shelf A-01</option>
+                  <option value="Shelf B-03">Shelf B-03</option>
+                  <option value="Shelf C-02">Shelf C-02</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="edit-status">Status</label>
+                <select id="edit-status">
+                  <option value="Available">Available</option>
+                  <option value="Linked">Linked</option>
+                  <option value="Borrowed">Borrowed</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="edit-desc">Book description</label>
+                <textarea id="edit-desc" placeholder="Brief summary of the book..."></textarea>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-light" type="button" data-close-modal>Cancel</button>
+          <button class="btn btn-save" type="button" data-action="Book updated">Update book</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript Application Script -->
+    <script src="js/app.js"></script>
+  </body>
+</html>

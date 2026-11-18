@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student–Book Records | Library Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <a class="brand" href="index.html">
+          <span class="brand-icon">▤</span>
+          <span>LibraryDesk</span>
+        </a>
+
+        <div class="nav-label">Main menu</div>
+        <nav class="nav">
+          <a href="index.html">
+            <span class="nav-icon">▦</span>
+            <span>Dashboard</span>
+          </a>
+          <a href="students.html">
+            <span class="nav-icon">♙</span>
+            <span>Students</span>
+          </a>
+          <a href="books.html">
+            <span class="nav-icon">▤</span>
+            <span>Books</span>
+          </a>
+          <a href="authors.html">
+            <span class="nav-icon">✎</span>
+            <span>Authors</span>
+          </a>
+          <a href="shelves.html">
+            <span class="nav-icon">▥</span>
+            <span>Shelves</span>
+          </a>
+          <a class="active" href="student-books.html">
+            <span class="nav-icon">⇄</span>
+            <span>Student–Book</span>
+          </a>
+          <a href="book-authors.html">
+            <span class="nav-icon">⌘</span>
+            <span>Book–Author</span>
+          </a>
+        </nav>
+
+        <div class="side-note">
+          Library Management System<br>
+          HTML &amp; CSS frontend
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main">
+        <!-- Topbar -->
+        <header class="topbar">
+          <div class="crumb">
+            <a href="index.html">Library Management</a>
+            <span> / </span>
+            <strong>Student–Book Records</strong>
+          </div>
+          <div class="top-right">
+            <input class="top-search" type="search" placeholder="Search...">
+            <div class="avatar">RA</div>
+          </div>
+        </header>
+
+        <!-- Content Section -->
+        <section class="content">
+          <!-- Page Header -->
+          <div class="page-head">
+            <div>
+              <div class="eyebrow">Library administration</div>
+              <h1>Student–Book Records</h1>
+              <p class="subtitle">View student-to-book associations stored in the student_book table.</p>
+            </div>
+            <button class="btn" type="button" data-open-modal="createStudentBookModal">＋ Link student to book</button>
+          </div>
+
+          <!-- Student-Book Table Panel -->
+          <section class="panel">
+            <div class="toolbar">
+              <input class="search" type="search" placeholder="Search student–book records...">
+              <a class="btn btn-light" href="index.html">← Dashboard</a>
+            </div>
+
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Student</th>
+                    <th>Book</th>
+                    <th>Student ID</th>
+                    <th>Book ID</th>
+                    <th>Date linked</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <a class="link" href="students.html"><strong>Amelia Ojong</strong></a>
+                    </td>
+                    <td>
+                      <a class="link" href="books.html">Clean Code</a>
+                    </td>
+                    <td>STU-001</td>
+                    <td>BK-001</td>
+                    <td>14 Nov 2026</td>
+                    <td>
+                      <div class="table-actions">
+                        <button
+                          class="btn btn-sm btn-edit"
+                          type="button"
+                          data-open-modal="editStudentBookModal"
+                          data-student="Amelia Ojong"
+                          data-book="Clean Code"
+                          data-student-id="STU-001"
+                          data-book-id="BK-001"
+                          data-date="2026-11-14"
+                        >
+                          ✎ Edit
+                        </button>
+                        <button class="btn btn-sm btn-delete" type="button">🗑 Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a class="link" href="students.html"><strong>Michael K.</strong></a>
+                    </td>
+                    <td>
+                      <a class="link" href="books.html">Database Systems</a>
+                    </td>
+                    <td>STU-002</td>
+                    <td>BK-003</td>
+                    <td>15 Nov 2026</td>
+                    <td>
+                      <div class="table-actions">
+                        <button
+                          class="btn btn-sm btn-edit"
+                          type="button"
+                          data-open-modal="editStudentBookModal"
+                          data-student="Michael K."
+                          data-book="Database Systems"
+                          data-student-id="STU-002"
+                          data-book-id="BK-003"
+                          data-date="2026-11-15"
+                        >
+                          ✎ Edit
+                        </button>
+                        <button class="btn btn-sm btn-delete" type="button">🗑 Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a class="link" href="students.html"><strong>Sandra N.</strong></a>
+                    </td>
+                    <td>
+                      <a class="link" href="books.html">Learning PHP</a>
+                    </td>
+                    <td>STU-003</td>
+                    <td>BK-002</td>
+                    <td>16 Nov 2026</td>
+                    <td>
+                      <div class="table-actions">
+                        <button
+                          class="btn btn-sm btn-edit"
+                          type="button"
+                          data-open-modal="editStudentBookModal"
+                          data-student="Sandra N."
+                          data-book="Learning PHP"
+                          data-student-id="STU-003"
+                          data-book-id="BK-002"
+                          data-date="2026-11-16"
+                        >
+                          ✎ Edit
+                        </button>
+                        <button class="btn btn-sm btn-delete" type="button">🗑 Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="hint">
+              Sample records for frontend preview. Live records will come from your database when connected.
+            </div>
+          </section>
+
+          <!-- Footer -->
+          <footer class="footer">
+            © 2026 LibraryDesk · Library Management System
+          </footer>
+        </section>
+      </main>
+    </div>
+
+    <!-- ======================================================================
+         CREATE STUDENT-BOOK MODAL
+         ====================================================================== -->
+    <div class="modal-backdrop" id="createStudentBookModal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-header-text">
+            <h3>Link student to book</h3>
+            <p>Assign a library book title to a registered student profile.</p>
+          </div>
+          <button class="modal-close" type="button" data-close-modal aria-label="Close modal">✕</button>
+        </div>
+
+        <div class="modal-body">
+          <form id="createStudentBookForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="create-student-select">Student</label>
+                <select id="create-student-select" required>
+                  <option value="">Select a student</option>
+                  <option value="Amelia Ojong">Amelia Ojong (STU-001)</option>
+                  <option value="Michael K.">Michael K. (STU-002)</option>
+                  <option value="Sandra N.">Sandra N. (STU-003)</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="create-book-select">Book</label>
+                <select id="create-book-select" required>
+                  <option value="">Select a book</option>
+                  <option value="Clean Code">Clean Code (BK-001)</option>
+                  <option value="Learning PHP">Learning PHP (BK-002)</option>
+                  <option value="Database Systems">Database Systems (BK-003)</option>
+                  <option value="HTML &amp; CSS">HTML &amp; CSS (BK-004)</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="create-link-date">Date linked</label>
+                <input id="create-link-date" type="date" value="2026-11-18">
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-light" type="button" data-close-modal>Cancel</button>
+          <button class="btn btn-save" type="button" data-action="Student-Book linked">Save association</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         EDIT / UPDATE STUDENT-BOOK MODAL
+         ====================================================================== -->
+    <div class="modal-backdrop" id="editStudentBookModal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-header-text">
+            <h3>Edit student–book association</h3>
+            <p>Modify the connected student, borrowed book, or checkout date.</p>
+          </div>
+          <button class="modal-close" type="button" data-close-modal aria-label="Close modal">✕</button>
+        </div>
+
+        <div class="modal-body">
+          <form id="editStudentBookForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="edit-student">Student</label>
+                <select id="edit-student" required>
+                  <option value="Amelia Ojong">Amelia Ojong</option>
+                  <option value="Michael K.">Michael K.</option>
+                  <option value="Sandra N.">Sandra N.</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="edit-book">Book</label>
+                <select id="edit-book" required>
+                  <option value="Clean Code">Clean Code</option>
+                  <option value="Learning PHP">Learning PHP</option>
+                  <option value="Database Systems">Database Systems</option>
+                  <option value="HTML &amp; CSS">HTML &amp; CSS</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="edit-date">Date linked</label>
+                <input id="edit-date" type="date">
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-light" type="button" data-close-modal>Cancel</button>
+          <button class="btn btn-save" type="button" data-action="Association updated">Update association</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript Application Script -->
+    <script src="js/app.js"></script>
+  </body>
+</html>

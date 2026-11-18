@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book–Author Records | Library Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <a class="brand" href="index.html">
+          <span class="brand-icon">▤</span>
+          <span>LibraryDesk</span>
+        </a>
+
+        <div class="nav-label">Main menu</div>
+        <nav class="nav">
+          <a href="index.html">
+            <span class="nav-icon">▦</span>
+            <span>Dashboard</span>
+          </a>
+          <a href="students.html">
+            <span class="nav-icon">♙</span>
+            <span>Students</span>
+          </a>
+          <a href="books.html">
+            <span class="nav-icon">▤</span>
+            <span>Books</span>
+          </a>
+          <a href="authors.html">
+            <span class="nav-icon">✎</span>
+            <span>Authors</span>
+          </a>
+          <a href="shelves.html">
+            <span class="nav-icon">▥</span>
+            <span>Shelves</span>
+          </a>
+          <a href="student-books.html">
+            <span class="nav-icon">⇄</span>
+            <span>Student–Book</span>
+          </a>
+          <a class="active" href="book-authors.html">
+            <span class="nav-icon">⌘</span>
+            <span>Book–Author</span>
+          </a>
+        </nav>
+
+        <div class="side-note">
+          Library Management System<br>
+          HTML &amp; CSS frontend
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main">
+        <!-- Topbar -->
+        <header class="topbar">
+          <div class="crumb">
+            <a href="index.html">Library Management</a>
+            <span> / </span>
+            <strong>Book–Author Records</strong>
+          </div>
+          <div class="top-right">
+            <input class="top-search" type="search" placeholder="Search...">
+            <div class="avatar">RA</div>
+          </div>
+        </header>
+
+        <!-- Content Section -->
+        <section class="content">
+          <!-- Page Header -->
+          <div class="page-head">
+            <div>
+              <div class="eyebrow">Library administration</div>
+              <h1>Book–Author Records</h1>
+              <p class="subtitle">Connect books with their authors through the book_authors pivot table.</p>
+            </div>
+            <button class="btn" type="button" data-open-modal="createBookAuthorModal">＋ Link book to author</button>
+          </div>
+
+          <!-- Book-Author Table Panel -->
+          <section class="panel">
+            <div class="toolbar">
+              <input class="search" type="search" placeholder="Search book–author records...">
+              <a class="btn btn-light" href="index.html">← Dashboard</a>
+            </div>
+
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Book</th>
+                    <th>Author</th>
+                    <th>Book ID</th>
+                    <th>Author ID</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <a class="link" href="books.html"><strong>Clean Code</strong></a>
+                    </td>
+                    <td>
+                      <a class="link" href="authors.html">Robert C. Martin</a>
+                    </td>
+                    <td>BK-001</td>
+                    <td>AUT-001</td>
+                    <td>
+                      <div class="table-actions">
+                        <button
+                          class="btn btn-sm btn-edit"
+                          type="button"
+                          data-open-modal="editBookAuthorModal"
+                          data-book="Clean Code"
+                          data-author="Robert C. Martin"
+                          data-book-id="BK-001"
+                          data-author-id="AUT-001"
+                        >
+                          ✎ Edit
+                        </button>
+                        <button class="btn btn-sm btn-delete" type="button">🗑 Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a class="link" href="books.html"><strong>Learning PHP</strong></a>
+                    </td>
+                    <td>
+                      <a class="link" href="authors.html">David Sklar</a>
+                    </td>
+                    <td>BK-002</td>
+                    <td>AUT-002</td>
+                    <td>
+                      <div class="table-actions">
+                        <button
+                          class="btn btn-sm btn-edit"
+                          type="button"
+                          data-open-modal="editBookAuthorModal"
+                          data-book="Learning PHP"
+                          data-author="David Sklar"
+                          data-book-id="BK-002"
+                          data-author-id="AUT-002"
+                        >
+                          ✎ Edit
+                        </button>
+                        <button class="btn btn-sm btn-delete" type="button">🗑 Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a class="link" href="books.html"><strong>HTML &amp; CSS</strong></a>
+                    </td>
+                    <td>
+                      <a class="link" href="authors.html">Jon Duckett</a>
+                    </td>
+                    <td>BK-004</td>
+                    <td>AUT-003</td>
+                    <td>
+                      <div class="table-actions">
+                        <button
+                          class="btn btn-sm btn-edit"
+                          type="button"
+                          data-open-modal="editBookAuthorModal"
+                          data-book="HTML &amp; CSS"
+                          data-author="Jon Duckett"
+                          data-book-id="BK-004"
+                          data-author-id="AUT-003"
+                        >
+                          ✎ Edit
+                        </button>
+                        <button class="btn btn-sm btn-delete" type="button">🗑 Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="hint">
+              Sample records for frontend preview. Live records will come from your database when connected.
+            </div>
+          </section>
+
+          <!-- Footer -->
+          <footer class="footer">
+            © 2026 LibraryDesk · Library Management System
+          </footer>
+        </section>
+      </main>
+    </div>
+
+    <!-- ======================================================================
+         CREATE BOOK-AUTHOR MODAL
+         ====================================================================== -->
+    <div class="modal-backdrop" id="createBookAuthorModal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-header-text">
+            <h3>Link book to author</h3>
+            <p>Connect a publication title to an author in your catalog.</p>
+          </div>
+          <button class="modal-close" type="button" data-close-modal aria-label="Close modal">✕</button>
+        </div>
+
+        <div class="modal-body">
+          <form id="createBookAuthorForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="create-book-choice">Book</label>
+                <select id="create-book-choice" required>
+                  <option value="">Select a book</option>
+                  <option value="Clean Code">Clean Code (BK-001)</option>
+                  <option value="Learning PHP">Learning PHP (BK-002)</option>
+                  <option value="Database Systems">Database Systems (BK-003)</option>
+                  <option value="HTML &amp; CSS">HTML &amp; CSS (BK-004)</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="create-author-choice">Author</label>
+                <select id="create-author-choice" required>
+                  <option value="">Select an author</option>
+                  <option value="Robert C. Martin">Robert C. Martin (AUT-001)</option>
+                  <option value="David Sklar">David Sklar (AUT-002)</option>
+                  <option value="Jon Duckett">Jon Duckett (AUT-003)</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-light" type="button" data-close-modal>Cancel</button>
+          <button class="btn btn-save" type="button" data-action="Book-Author linked">Save association</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         EDIT / UPDATE BOOK-AUTHOR MODAL
+         ====================================================================== -->
+    <div class="modal-backdrop" id="editBookAuthorModal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-header-text">
+            <h3>Edit book–author association</h3>
+            <p>Modify the connected book or designated contributing author.</p>
+          </div>
+          <button class="modal-close" type="button" data-close-modal aria-label="Close modal">✕</button>
+        </div>
+
+        <div class="modal-body">
+          <form id="editBookAuthorForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="edit-book">Book</label>
+                <select id="edit-book" required>
+                  <option value="Clean Code">Clean Code</option>
+                  <option value="Learning PHP">Learning PHP</option>
+                  <option value="Database Systems">Database Systems</option>
+                  <option value="HTML &amp; CSS">HTML &amp; CSS</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="edit-author">Author</label>
+                <select id="edit-author" required>
+                  <option value="Robert C. Martin">Robert C. Martin</option>
+                  <option value="David Sklar">David Sklar</option>
+                  <option value="Jon Duckett">Jon Duckett</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-light" type="button" data-close-modal>Cancel</button>
+          <button class="btn btn-save" type="button" data-action="Association updated">Update association</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript Application Script -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
